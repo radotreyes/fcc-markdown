@@ -2,20 +2,25 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const HandlebarDiv = styled.div`
+    position: relative;
     display: block;
-    background-color: #111;
+    background-color: ${ props => props.clicked ? '#0ff' : '#222' }
     height: 100%;
-    width: .5em;
-    z-index: 10;
+    width: 1%;
+    z-index: 100;
 `
 class Handlebar extends Component {
-    handleClick( e ) {
-        console.log( 'ouch' )
+    constructor( props ) {
+        super( props )
+        console.log( this.props.handleClick )
     }
     render() {
         return (
-            <HandlebarDiv 
-                onClick={ e => this.handleClick( e ) }
+            <HandlebarDiv
+                // onMouseLeave={ this.props.handleMouseLeave }
+                onMouseDown={ this.props.handleMouseDown }
+                onMouseUp={ this.props.handleMouseUp } 
+                clicked={ this.props.clicked }
             />
         )
     }
