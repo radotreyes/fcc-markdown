@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react'
+import Footer from './components/Footer'
 import Handlebar from './components/Handlebar'
 import Panel from './components/Panel'
 import './App.css'
@@ -42,14 +43,20 @@ class App extends Component {
   }
   handleWindowResize() {
     this.setState( {
-      width: this.ref.current.clientWidth
+      width: window.innerWidth
     } )
   }
 
   componentDidMount() {
-    window.addEventListener( 'resize', this.handleWindowResize )
     this.handleWindowResize()
   }
+
+  componentDidUpdate() {
+    if( this.state.width !== window.innerWidth ) {
+      this.handleWindowResize()
+    }
+  }
+  
 
   render() {
     const firstPanelWidth = ( Math.round( this.state.mouseX / this.state.width * 10000 ) / 100 || 30 ) - .5
@@ -73,12 +80,13 @@ class App extends Component {
             handleMouseUp={ e => this.handleMouseUp( e ) }
           />
           <Panel
-            backgroundColor="#eee"
+            backgroundColor="white"
             handleChange={ e => this.handleChange( e ) }
             type="editor"
             width={ `${ secondPanelWidth }%` }
           />
         </div>
+        <Footer />
       </div>
     );
   }
