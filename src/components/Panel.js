@@ -12,6 +12,7 @@ const PanelContainer = styled.div`
     background-color: ${ props => props.backgroundColor }
     font-family: "Avenir Next";
     overflow-wrap: break-word;
+    overflow-y: scroll;
 `
 const Editor = styled.textarea`
     position: relative;
