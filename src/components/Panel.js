@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
+import DefaultText from '../data/default-text'
 
 const PanelContainer = styled.div`
     display: block;
@@ -23,7 +24,8 @@ const Editor = styled.textarea`
     resize: none;
 `
 const Panel = props => {
-    const editor = props.type === 'editor' ? <Editor id="editor" /> : null
+    const editor = props.type === 'editor' ? 
+        <Editor id="editor" placeholder={ DefaultText } /> : null
     const markdown = props.preview ? <ReactMarkdown source={ props.preview } /> : null
     return (
         <PanelContainer 

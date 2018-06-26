@@ -2,6 +2,7 @@ import React, { Component, createRef } from 'react'
 import Footer from './components/Footer'
 import Handlebar from './components/Handlebar'
 import Panel from './components/Panel'
+import DefaultText from './data/default-text'
 import './App.css'
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     super()
     this.ref = createRef() // create a reference to the element's DOM node
     this.state = {
-      markdown: null,
+      markdown: DefaultText,
       mouseX: null,
       resize: false,
       width: null,
@@ -50,7 +51,6 @@ class App extends Component {
   componentDidMount() {
     this.handleWindowResize()
   }
-
   componentDidUpdate() {
     if( this.state.width !== window.innerWidth ) {
       this.handleWindowResize()

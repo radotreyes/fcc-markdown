@@ -5,7 +5,7 @@ const HandlebarDiv = styled.div`
     position: relative;
     display: block;
     padding: 1em 0;
-    background-color: ${ props => props.clicked ? '#0ff' : '#222' }
+    background-color: ${ props => props.clicked ? '#08c' : '#444' }
     height: 100%;
     width: 1%;
     z-index: 100;

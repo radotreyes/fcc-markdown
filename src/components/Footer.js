@@ -14,10 +14,16 @@ const FooterDiv = styled.div`
     text-align: center;
 `
 
+const VerticalAligned = styled.div`
+    position: relative;
+    top: 60%;
+    transform: translateY( -50% );
+`
+
 const Footer = () => {
     return (
         <FooterDiv>
-            Made for freeCodeCamp by Reuben Reyes
+            <VerticalAligned>Made for freeCodeCamp by Reuben Reyes</VerticalAligned>
         </FooterDiv>
     )
 }
