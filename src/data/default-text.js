@@ -9,7 +9,10 @@ const DefaultText =
 
 Both \`inline code\` and code blocks are supported:
 \`\`\`
-const hello = function() { console.log( 'hello, world' ) }
+const hello = function() { 
+    console.log( 'hello, world' ) 
+    return 'help me'
+}
 \`\`\`
 
 * Both types of lists work
